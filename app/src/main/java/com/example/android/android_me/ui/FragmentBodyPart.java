@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import com.example.android.android_me.R;
 import com.example.android.android_me.data.*;
 
+import java.util.List;
+
 /**
  * Created by senamit on 28/1/18.
  */
@@ -20,6 +22,10 @@ import com.example.android.android_me.data.*;
 public class FragmentBodyPart extends Fragment {
 
     private static final String LOG_TAG = FragmentBodyPart.class.getSimpleName();
+
+    //lets create variable, so that it takes the correct data, not the hardcoded
+    private List<Integer> mImageIds;
+    private int mListIndex;
 
     public FragmentBodyPart() {
         Log.i(LOG_TAG, "inside the constructor of the FragmentBodyPart");
@@ -35,9 +41,18 @@ public class FragmentBodyPart extends Fragment {
 
         ImageView imageView = (ImageView) rootView.findViewById(R.id.imageView_body_part);
 
-        imageView.setImageResource(AndroidImageAssets.getHeads().get(0));
+//        imageView.setImageResource(AndroidImageAssets.getHeads().get(0));
+        imageView.setImageResource(mImageIds.get(mListIndex));
 
 
         return rootView;
+    }
+
+    public void setmImageIds(List<Integer> mImageIds) {
+        this.mImageIds = mImageIds;
+    }
+
+    public void setmListIndex(int mListIndex) {
+        this.mListIndex = mListIndex;
     }
 }
