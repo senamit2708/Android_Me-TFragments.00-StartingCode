@@ -29,6 +29,16 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin">
 
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:id="@+id/fragment_head_part"
+           />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:id="@+id/fragment_second_part"></FrameLayout>
+
 
     </LinearLayout>
 
