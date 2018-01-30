@@ -28,16 +28,19 @@ import com.example.android.android_me.data.*;
 public class AndroidMeActivity extends AppCompatActivity {
 
     public static final String LOG_TAG = AndroidMeActivity.class.getSimpleName();
+    int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
 
+        position = getIntent().getIntExtra("keyPosition", 4);
+
         FragmentBodyPart headPart = new FragmentBodyPart();
         Log.i(LOG_TAG, "the fragmentbodypart class instance is created");
         headPart.setImageIds(AndroidImageAssets.getHeads());
-        headPart.setListIndex(1);
+        headPart.setListIndex(position);
 
         Log.i(LOG_TAG, "initialization done ");
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -47,7 +50,7 @@ public class AndroidMeActivity extends AppCompatActivity {
 
         FragmentSecondPart secondPart = new FragmentSecondPart();
         secondPart.setmImageIds(AndroidImageAssets.getBodies());
-        secondPart.setmListIndex(1);
+        secondPart.setmListIndex(position);
         FragmentManager secondFragmentManger = getSupportFragmentManager();
 
         secondFragmentManger.beginTransaction().add(R.id.fragment_second_part, secondPart).commit();

@@ -42,6 +42,8 @@ public class FragmentSecondPart extends Fragment{
 
         final ImageView imageView = (ImageView)rootView.findViewById(R.id.imageView_second_part);
 //        imageView.setImageResource(AndroidImageAssets.getBodies().get(0));
+//        mListIndex = savedInstanceState.getInt("keyPosition");
+        Log.i(LOG_TAG, "the index position is "+mListIndex);
         if (mImageIds!= null){
             imageView.setImageResource(mImageIds.get(mListIndex));
             imageView.setOnClickListener(new View.OnClickListener() {
