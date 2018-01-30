@@ -35,9 +35,11 @@ public class AndroidMeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_android_me);
 
         FragmentBodyPart headPart = new FragmentBodyPart();
-        headPart.setmImageIds(AndroidImageAssets.getHeads());
-        headPart.setmListIndex(1);
+        Log.i(LOG_TAG, "the fragmentbodypart class instance is created");
+        headPart.setImageIds(AndroidImageAssets.getHeads());
+        headPart.setListIndex(1);
 
+        Log.i(LOG_TAG, "initialization done ");
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().add(R.id.fragment_head_part, headPart).commit();
 
@@ -48,7 +50,7 @@ public class AndroidMeActivity extends AppCompatActivity {
         secondPart.setmListIndex(1);
         FragmentManager secondFragmentManger = getSupportFragmentManager();
 
-        fragmentManager.beginTransaction().add(R.id.fragment_second_part, secondPart).commit();
+        secondFragmentManger.beginTransaction().add(R.id.fragment_second_part, secondPart).commit();
 
 
 
